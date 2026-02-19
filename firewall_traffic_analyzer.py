@@ -1,8 +1,9 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Regina Swartout
+# DATE: 2/19/26
+# BRIEF DESCRIPTION: A program that monitors data transfers to a network and the risk assessment 
+# based on the port number as well as the size of the transfer.
 
 
 
@@ -14,14 +15,22 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-
-
-
-
-
-
-
-
+print("=== Network Traffic Security Analyzer ===")
+print()
+port = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
+size = int(input("Enter the data transfer size in megabytes (MB): "))
+print()
+print("FIREWALL LOG:")
+print(f'Port: {port}, Transfer Size: {size} MB')
+if (port == 22 or port == 3389) and size >= 100:
+    print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
+elif port == 80 and size >100:
+    print("Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.")
+elif port == 443:
+    print("Risk Assessment: LOW RISK: Secure encrypted transfer detected.")
+else:
+    print("Risk Assessment: UNKNOWN: Unrecognized traffic pattern.")
+print("------------------------")
 
 
 ########### END YER CODE ABOVE THIS LINE ###########
@@ -50,10 +59,10 @@ Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.
 === Network Traffic Security Analyzer ===
 
 Enter the port number (e.g., 80, 22, 443, 3389): 22
-Enter the data transfer size in megabytes (MB): 12
+Enter the data transfer size in megabytes (MB): 1200
 
 FIREWALL LOG:
-Port: 22, Transfer Size: 12 MB
+Port: 22, Transfer Size: 1200 MB
 Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!
 ------------------------
 '''
@@ -89,7 +98,11 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 '''
 
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
-
+No, I did not because of the hint in the project description to use () around the or portion.
+I hadn't realized that 'and' took higher precedence. That makes so much more sense now. I've 
+had issues in my past exerience with Python and couldn't understand why the answer to some multiple 
+choice questions with compound conditioanls was different than what I thought it would be. Now I 
+better understand that the 'and' portion gets run first.  Thanks!
 
 
 
